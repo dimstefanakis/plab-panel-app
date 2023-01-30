@@ -1,4 +1,4 @@
-import { Flex } from '@chakra-ui/react';
+import { Flex } from "@chakra-ui/react";
 
 interface StickyBottomProps {
   children: JSX.Element;
@@ -6,10 +6,25 @@ interface StickyBottomProps {
   pb?: number;
 }
 
-function StickyBottom({ children, backgroundColor = 'transparent', pb = 12 }: StickyBottomProps) {
+function StickyBottom({
+  children,
+  backgroundColor = "transparent",
+  pb = 12,
+}: StickyBottomProps) {
   return (
-    <Flex position="fixed" bottom="0" left="0" w="100%" px={6} pb={pb} pt={0} bg={backgroundColor}>
-      {children}
+    <Flex
+      position="fixed"
+      justifyContent="center"
+      bottom="0"
+      left="0"
+      w="100%"
+      pb={pb}
+      pt={0}
+      bg={backgroundColor}
+    >
+      <Flex px={10} maxW="800px" w="100%">
+        {children}
+      </Flex>
     </Flex>
   );
 }

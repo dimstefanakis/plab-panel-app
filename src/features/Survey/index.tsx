@@ -15,11 +15,9 @@ import { openSuccessModal } from "./SuccessModal/successModalSlice";
 import { RootState } from "@/store";
 import api from "@/core/api";
 
-function Survey() {
+function Survey({ id }: any) {
   const dispatch = useAppDispatch();
   const toast = useToast();
-  const router = useRouter();
-  const { id } = router.query;
   const { submitting, data } = useSelector((state: RootState) => state.survey);
   const [, setLoading] = useState(false);
   const [pageIndex, setPageIndex] = useState(0);
